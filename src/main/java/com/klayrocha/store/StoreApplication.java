@@ -4,6 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.klayrocha.store.model.User;
@@ -25,10 +26,12 @@ public class StoreApplication {
 
 	private void initUsers(UserService userService, BCryptPasswordEncoder passwordEncoder) {
 		User user = new User();
-		user.setFullName("Francis Klay Rocha");;
-		user.setUsername("klayrocha");;
-		user.setPassword("123456");;
-		if(userService.loadUserByUsername(user.getUsername()) == null) {
+		user.setFullName("Francis Klay Rocha");
+		user.setUsername("klayrocha");
+		user.setPassword("123456");
+		try {
+			userService.loadUserByUsername(user.getUsername());
+		} catch (UsernameNotFoundException e) {
 			userService.create(user);
 		}
 	}
