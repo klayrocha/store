@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "ed4a2f75-9497-4865-81ca-f76a34953c66",
+		"name": "Product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AllProduct",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrbGF5cm9jaGEiLCJyb2xlcyI6WyJBZG1pbiJdLCJpYXQiOjE2NDczMDkyNDEsImV4cCI6MTY0NzMxOTE0MX0.10UFmej4sSqnm6sP5i7EAhC17Qr7OBFK3DHJ8hba4r4 ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/product?page=0&limit=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrbGF5cm9jaGEiLCJyb2xlcyI6WyJBZG1pbiJdLCJpYXQiOjE2NDczMDk0MTcsImV4cCI6MTY0NzMxOTMxN30.UQPazzwnUh-0YadO18yX2-zYOL9Gs2bo_fMkIK9nMi4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/product/5555",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"5555"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"username\": \"klayrocha\",\n   \"password\": \"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrbGF5cm9jaGEiLCJyb2xlcyI6WyJBZG1pbiJdLCJpYXQiOjE2NDczMDkyNDEsImV4cCI6MTY0NzMxOTE0MX0.10UFmej4sSqnm6sP5i7EAhC17Qr7OBFK3DHJ8hba4r4 ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"name\": \"Melão\",\n        \"quantity\": 200,\n        \"productType\": {\n            \"id\": 2\n        }\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrbGF5cm9jaGEiLCJyb2xlcyI6WyJBZG1pbiJdLCJpYXQiOjE2NDczMDkyNDEsImV4cCI6MTY0NzMxOTE0MX0.10UFmej4sSqnm6sP5i7EAhC17Qr7OBFK3DHJ8hba4r4 ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"id\": 10,\n        \"name\": \"Melão não será frutra\",\n        \"quantity\": 200,\n        \"productType\": {\n            \"id\": 1\n        }\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrbGF5cm9jaGEiLCJyb2xlcyI6WyJBZG1pbiJdLCJpYXQiOjE2NDczMDkyNDEsImV4cCI6MTY0NzMxOTE0MX0.10UFmej4sSqnm6sP5i7EAhC17Qr7OBFK3DHJ8hba4r4 ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/product/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

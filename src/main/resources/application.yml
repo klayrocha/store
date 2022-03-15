@@ -1,0 +1,5 @@
+security:
+  jwt:
+    token: 
+      secret-key: key_CONS_contruo_ld_D_R_jwt
+      expire-length: 9900000 
